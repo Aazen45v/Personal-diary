@@ -20,6 +20,7 @@ let posts = [];
 
 
 
+
 app.get("/",function(req,res){
   res.render("home",{
     StartingContent: homeStartingContent,
@@ -57,10 +58,19 @@ app.post("/compose",function(req,res){
 
 
 
+app.get("/posts/:postName",function(req,res){
+  const requstedTitle = req.params.postName;
+  posts.forEach(function(post){
+  const storedTitle = post.title;
 
+  if (storedTitle === requstedTitle) {
+    console.log("Match found");
+  } else {
+    console.log("Error");
+  }
+});
 
-
-
+});
 
 
 

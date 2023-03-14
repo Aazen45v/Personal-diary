@@ -4,8 +4,12 @@
 <h1>Hello</h1>
 <p> <%= StartingContent %> </p>
 
-<%   newPosts.forEach(element => {  %>
-<%   console.log(element);  %>
+
+<% newPosts.forEach(post => { %>
+<h1> <%= post.title %> </h1>
+<p> <%= post.content %> </p>
+
     <% }); %>
+
 
 <%- include("partials/footer") %>
